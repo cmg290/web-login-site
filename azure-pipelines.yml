@@ -40,4 +40,4 @@ stages:
       inputs:
         azureSubscription: 'Free Trial(c05d6eed-d7d0-4f4f-8aa8-329bacfd435a)'
         KeyVaultName: 'TenahleCSDemoKeyVault'
-        SecretsFilter: *
+        SecretsFilter: '*'
