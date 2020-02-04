@@ -41,3 +41,8 @@ stages:
         azureSubscription: 'Free Trial(c05d6eed-d7d0-4f4f-8aa8-329bacfd435a)'
         KeyVaultName: 'TenahleCSDemoKeyVault'
         SecretsFilter: '*'
+    - task: ShellScript@2
+      displayName: Assessing image for vulnerabilities
+      inputs:
+       scriptPath: tiocs-azure-on-prem-scanner.sh
+       args: '$(TIOACCESSKEY) $(TIOSECRETKEY) $(TIOJFROGPASS)'
