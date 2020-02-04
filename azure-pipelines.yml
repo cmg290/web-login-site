@@ -31,9 +31,13 @@ stages:
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
-        command: buildAndPush
+        command: build
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Free Trial(c05d6eed-d7d0-4f4f-8aa8-329bacfd435a)'
+        KeyVaultName: 'TenahleCSDemoKeyVault'
+        SecretsFilter: 
